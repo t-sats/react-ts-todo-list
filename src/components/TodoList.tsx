@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import TodoForm from './TodoForm';
 
 type TodoProps = {
@@ -16,6 +16,19 @@ const TodoList = () => {
     const [editingId, setEditingId] = useState<number | null>(null);
 
     const [editText, setEditText] = useState<string>('');
+
+    useEffect(() => {
+        const savedTodos: string | null = localStorage.getItem('todos');
+        if (savedTodos) {
+            setTodos(JSON.parse(savedTodos))
+        };
+    }, []);
+
+    useEffect(() => {
+        if (todos.length > 0) {
+            localStorage.setItem('todos', JSON.stringify(todos))
+        };
+    }, [todos]);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setText(event.target.value);
