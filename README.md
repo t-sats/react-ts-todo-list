@@ -1,11 +1,20 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite Todo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is React + TypeScript + Vite Todo List App.
 
-Currently, two official plugins are available:
+It includes creating, completing, editing and deleting functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Todo Items persist across browser refreshes using localStorage.
+
+##  Getting Started
+
+```bash
+# install dependencies
+npm i
+# run dev-server
+npm run dev
+# open http://localhost:3000 to see the result
+```
 
 ## Expanding the ESLint configuration
 
