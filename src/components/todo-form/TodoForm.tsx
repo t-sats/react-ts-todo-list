@@ -1,5 +1,7 @@
 import React, { ChangeEvent } from 'react';
 
+import './TodoForm.css';
+
 type TodoFormProps = {
     text: string,
     handleChange: (event: ChangeEvent<HTMLInputElement>) => void,
@@ -8,7 +10,7 @@ type TodoFormProps = {
 
 const TodoForm = ({ text, handleChange, addTodo } : TodoFormProps) => {
     return (
-        <div>
+        <div className='form-container'>
             <input
                 value={text}
                 onChange={handleChange}

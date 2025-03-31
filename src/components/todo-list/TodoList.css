@@ -1,0 +1,48 @@
+.completed {
+  text-decoration: line-through;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+}
+
+@media screen and (min-width: 600px) {
+   .todo-container {
+       width: 500px;
+   }
+}
+
+.todo-item {
+  background-color: #f2efed;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.actions button {
+  border: none;
+  border-radius: 17px;
+  color: #f5f5f5;
+  cursor: pointer;
+  padding: 10px;
+  min-width: 80px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.actions button:nth-child(1) {
+    background-color: #e27312;
+    transition: background-color 0.3s ease;
+}
+
+.actions button:nth-child(2) {
+    background-color: #539359;
+    transition: background-color 0.3s ease;
+}
+
+.actions button:nth-child(3) {
+    background-color: #e44232;
+    transition: background-color 0.3s ease;
+}

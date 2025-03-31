@@ -2,14 +2,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   height: 100vh;
   max-width: 1500px;
   margin: 0 auto;
@@ -22,6 +21,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 20px;
 }
 
 .container {
@@ -31,8 +31,4 @@ h1 {
   align-items: center;
   justify-content: center;
   color: #333;
-}
-
-.completed {
-  text-decoration: line-through;
 }

@@ -1,5 +1,9 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
-import TodoForm from './TodoForm';
+import TodoForm from '../todo-form/TodoForm';
+import TodoEditForm from '../todo-edit-form/TodoEditForm';
+import TodoListItem from '../todo-list-item/TodoListItem';
+
+import './TodoList.css';
 
 type TodoProps = {
     id: number,
@@ -85,31 +89,31 @@ const TodoList = () => {
                 handleChange={handleChange}
                 addTodo={addTodo}
             />
-            <ul>
+            <div className='todo-container'>
                 {todos.map((todo) =>
-                    <li key={todo.id}>
+                    <div key={todo.id} className='todo-item'>
                         {editingId === todo.id ? (
-                            <div>
-                                <input
-                                    type='text'
-                                    value={editText}
-                                    onChange={handleEditChange}
-                                />
-                                <button onClick={saveEditedTodo}>Save changes</button>
-                                <button onClick={cancelEditing}>Cancel</button>
-                            </div>
+                            <TodoEditForm
+                                text={editText}
+                                handleChange={handleEditChange}
+                                saveEditedTodo={saveEditedTodo}
+                                cancelEditing={cancelEditing}
+                            />
                         ) : (
-                            <>
-                              <span className={todo.completed ? 'completed' : ''}>{todo.text}</span>
-                                <button onClick={() => toggleTodo(todo.id)}>Mark as completed Todo</button>
-                                <button onClick={() => startEditing(todo)}>Edit Todo</button>
-                                <button onClick={() => deleteTodo(todo.id)}>Delete Todo</button>
-                            </>
+                            <TodoListItem
+                                className={todo.completed ? 'completed' : ''}
+                                text={todo.text}
+                            >
+                                <div className='actions'>
+                                    <button onClick={() => toggleTodo(todo.id)}>Completed</button>
+                                    <button onClick={() => startEditing(todo)}>Edit Todo</button>
+                                    <button onClick={() => deleteTodo(todo.id)}>Delete Todo</button>
+                                </div>
+                            </TodoListItem>
                         )}
-
-                    </li>
+                    </div>
                 )}
-            </ul>
+            </div>
         </>
     )
 };

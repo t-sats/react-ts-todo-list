@@ -1,0 +1,8 @@
+.todo-list-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    min-height: 70px;
+    flex-wrap: wrap;
+}
