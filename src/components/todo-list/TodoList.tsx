@@ -13,20 +13,16 @@ type TodoProps = {
 
 const TodoList = () => {
 
-    const [todos, setTodos] = useState<TodoProps[]>([]);
+    const [todos, setTodos] = useState<TodoProps[]>(() => {
+        const savedTodos = localStorage.getItem('todos');
+        return savedTodos ? JSON.parse(savedTodos) : [];
+    });
 
     const [text, setText] = useState('');
 
     const [editingId, setEditingId] = useState<number | null>(null);
 
     const [editText, setEditText] = useState<string>('');
-
-    useEffect(() => {
-        const savedTodos: string | null = localStorage.getItem('todos');
-        if (savedTodos) {
-            setTodos(JSON.parse(savedTodos))
-        };
-    }, []);
 
     useEffect(() => {
         if (todos.length > 0) {
@@ -61,26 +57,26 @@ const TodoList = () => {
     };
 
     const startEditing = (todo: TodoProps) => {
-    setEditingId(todo.id);
-    setEditText(todo.text);
-  };
+        setEditingId(todo.id);
+        setEditText(todo.text);
+    };
 
-  const handleEditChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEditText(e.target.value);
-  };
+    const handleEditChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEditText(e.target.value);
+    };
 
-  const saveEditedTodo = () => {
-    if (editText.trim() === '') return;
+    const saveEditedTodo = () => {
+        if (editText.trim() === '') return;
 
-    setTodos(todos.map(todo =>
-      todo.id === editingId ? { ...todo, text: editText } : todo
-    ));
-    setEditingId(null);
-  };
+        setTodos(todos.map(todo =>
+        todo.id === editingId ? { ...todo, text: editText } : todo
+        ));
+        setEditingId(null);
+    };
 
-  const cancelEditing = () => {
-    setEditingId(null);
-  };
+    const cancelEditing = () => {
+        setEditingId(null);
+    };
 
     return (
         <>
