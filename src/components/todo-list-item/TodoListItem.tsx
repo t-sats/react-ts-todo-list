@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import './TodoListItem.css'
 
@@ -13,7 +13,7 @@ const TodoListItem = ({ text, className, children } : TodoListItemProps) => {
             <p className={className}>{text}</p>
             {children}
         </div>
-    )
+    );
 };
 
 export default TodoListItem;

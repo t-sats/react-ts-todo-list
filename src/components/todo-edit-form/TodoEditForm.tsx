@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 
 import './TodoEditForm.css';
 
@@ -20,7 +20,7 @@ const TodoEditForm = ({ text, handleChange, saveEditedTodo, cancelEditing } : To
             <button onClick={saveEditedTodo}>Save</button>
             <button onClick={cancelEditing}>Cancel</button>
         </div>
-    )
+    );
 };
 
 export default TodoEditForm;

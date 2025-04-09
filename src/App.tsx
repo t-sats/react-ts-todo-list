@@ -1,6 +1,8 @@
 import TodoList from './components/todo-list/TodoList';
+import { ThemeContextProvider } from './contexts/ThemeContext';
+import ToggleTheme from './components/toggle-theme/ToggleTheme';
 
-import './style.css';
+import './styles/style.css';
 
 function App() {
 
@@ -8,6 +10,9 @@ function App() {
     <>
       <div className='container'>
         <h1>React + TypeScript Todo List</h1>
+          <ThemeContextProvider>
+              <ToggleTheme/>
+          </ThemeContextProvider>
           <TodoList/>
       </div>
     </>

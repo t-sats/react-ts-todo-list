@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import TodoForm from '../todo-form/TodoForm';
 import TodoEditForm from '../todo-edit-form/TodoEditForm';
 import TodoListItem from '../todo-list-item/TodoListItem';
@@ -111,7 +111,7 @@ const TodoList = () => {
                 )}
             </div>
         </>
-    )
+    );
 };
 
 export default TodoList;
