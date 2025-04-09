@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 
 import './TodoForm.css';
 
@@ -18,7 +18,7 @@ const TodoForm = ({ text, handleChange, addTodo } : TodoFormProps) => {
             />
             <button onClick={addTodo}>Add Todo</button>
         </div>
-    )
+    );
 };
 
 export default TodoForm;
